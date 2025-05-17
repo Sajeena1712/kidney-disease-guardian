@@ -3,7 +3,7 @@ import React from "react";
 import Layout from "@/components/Layout";
 import HeroSection from "@/components/HeroSection";
 import FeatureCard from "@/components/FeatureCard";
-import { Activity, Database, Flask, Heart, FileCheck, Brain } from "lucide-react";
+import { Activity, Database, TestTube, Heart, FileCheck, Brain } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -52,7 +52,7 @@ const Index = () => {
                   <span>Reduces risk of complications</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Flask className="h-5 w-5 text-medical-teal mt-0.5" />
+                  <TestTube className="h-5 w-5 text-medical-teal mt-0.5" />
                   <span>Enables timely treatment interventions</span>
                 </li>
               </ul>
