@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React from "react";
 import { 
   Form, 
   FormControl, 
@@ -73,51 +73,19 @@ const PatientDataForm: React.FC<PatientDataFormProps> = ({ onSubmit, isLoading }
     }
   };
 
-  const [currentSection, setCurrentSection] = useState(0);
-  const fieldsPerSection = 7;
-  const sections = Math.ceil(patientDataFields.length / fieldsPerSection);
-  
-  const currentFields = patientDataFields.slice(
-    currentSection * fieldsPerSection, 
-    (currentSection + 1) * fieldsPerSection
-  );
-
-  const goToNextSection = () => {
-    if (currentSection < sections - 1) {
-      setCurrentSection(currentSection + 1);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
-
-  const goToPrevSection = () => {
-    if (currentSection > 0) {
-      setCurrentSection(currentSection - 1);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
-
-  const isLastSection = currentSection === sections - 1;
-
   return (
     <div className="space-y-6 rounded-lg border p-6 shadow-sm">
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-semibold">Patient Data</h2>
         <div className="text-sm text-muted-foreground">
-          Section {currentSection + 1} of {sections}
+          6 Key Parameters
         </div>
-      </div>
-      
-      <div className="w-full bg-secondary h-2 rounded-full overflow-hidden">
-        <div 
-          className="bg-primary h-full transition-all duration-300 ease-out" 
-          style={{ width: `${((currentSection + 1) / sections) * 100}%` }}
-        ></div>
       </div>
       
       <Form {...form}>
         <form onSubmit={form.handleSubmit(handleFormSubmit)} className="space-y-4">
           <div className="grid gap-4 sm:grid-cols-2">
-            {currentFields.map((field) => (
+            {patientDataFields.map((field) => (
               <FormField
                 key={field.id}
                 control={form.control}
@@ -166,39 +134,21 @@ const PatientDataForm: React.FC<PatientDataFormProps> = ({ onSubmit, isLoading }
             ))}
           </div>
           
-          <div className="flex justify-between pt-4">
+          <div className="flex justify-end pt-4">
             <Button 
-              type="button" 
-              variant="outline" 
-              onClick={goToPrevSection}
-              disabled={currentSection === 0}
+              type="submit" 
+              disabled={isLoading}
+              className="bg-medical-teal hover:bg-medical-teal/90"
             >
-              Previous
+              {isLoading ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Processing
+                </>
+              ) : (
+                'Submit & Predict'
+              )}
             </Button>
-            
-            {!isLastSection ? (
-              <Button 
-                type="button" 
-                onClick={goToNextSection}
-              >
-                Next
-              </Button>
-            ) : (
-              <Button 
-                type="submit" 
-                disabled={isLoading}
-                className="bg-medical-teal hover:bg-medical-teal/90"
-              >
-                {isLoading ? (
-                  <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Processing
-                  </>
-                ) : (
-                  'Submit & Predict'
-                )}
-              </Button>
-            )}
           </div>
         </form>
       </Form>

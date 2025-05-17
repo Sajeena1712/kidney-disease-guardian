@@ -1,4 +1,3 @@
-
 // Patient data form fields
 export type PatientDataField = {
   id: string;
@@ -29,106 +28,7 @@ export const patientDataFields: PatientDataField[] = [
     min: 50,
     max: 200,
     unit: 'mm/Hg',
-    description: 'Patient blood pressure (systolic)'
-  },
-  {
-    id: 'sg',
-    label: 'Specific Gravity',
-    type: 'select',
-    options: [
-      { value: '1.005', label: '1.005' },
-      { value: '1.010', label: '1.010' },
-      { value: '1.015', label: '1.015' },
-      { value: '1.020', label: '1.020' },
-      { value: '1.025', label: '1.025' }
-    ],
-    description: 'Specific gravity of urine'
-  },
-  {
-    id: 'al',
-    label: 'Albumin',
-    type: 'select',
-    options: [
-      { value: '0', label: '0' },
-      { value: '1', label: '1' },
-      { value: '2', label: '2' },
-      { value: '3', label: '3' },
-      { value: '4', label: '4' },
-      { value: '5', label: '5' }
-    ],
-    description: 'Albumin level in urine'
-  },
-  {
-    id: 'su',
-    label: 'Sugar',
-    type: 'select',
-    options: [
-      { value: '0', label: '0' },
-      { value: '1', label: '1' },
-      { value: '2', label: '2' },
-      { value: '3', label: '3' },
-      { value: '4', label: '4' },
-      { value: '5', label: '5' }
-    ],
-    description: 'Sugar level in urine'
-  },
-  {
-    id: 'rbc',
-    label: 'Red Blood Cells',
-    type: 'select',
-    options: [
-      { value: 'normal', label: 'Normal' },
-      { value: 'abnormal', label: 'Abnormal' }
-    ],
-    description: 'Red blood cells in urine'
-  },
-  {
-    id: 'pc',
-    label: 'Pus Cells',
-    type: 'select',
-    options: [
-      { value: 'normal', label: 'Normal' },
-      { value: 'abnormal', label: 'Abnormal' }
-    ],
-    description: 'Pus cells in urine'
-  },
-  {
-    id: 'pcc',
-    label: 'Pus Cell Clumps',
-    type: 'select',
-    options: [
-      { value: 'present', label: 'Present' },
-      { value: 'notpresent', label: 'Not Present' }
-    ],
-    description: 'Pus cell clumps in urine'
-  },
-  {
-    id: 'ba',
-    label: 'Bacteria',
-    type: 'select',
-    options: [
-      { value: 'present', label: 'Present' },
-      { value: 'notpresent', label: 'Not Present' }
-    ],
-    description: 'Bacteria in urine'
-  },
-  {
-    id: 'bgr',
-    label: 'Blood Glucose Random',
-    type: 'number',
-    min: 20,
-    max: 500,
-    unit: 'mg/dL',
-    description: 'Blood glucose level'
-  },
-  {
-    id: 'bu',
-    label: 'Blood Urea',
-    type: 'number',
-    min: 1,
-    max: 200,
-    unit: 'mg/dL',
-    description: 'Blood urea level'
+    description: 'Patient systolic blood pressure'
   },
   {
     id: 'sc',
@@ -141,25 +41,6 @@ export const patientDataFields: PatientDataField[] = [
     description: 'Serum creatinine level'
   },
   {
-    id: 'sod',
-    label: 'Sodium',
-    type: 'number',
-    min: 100,
-    max: 180,
-    unit: 'mEq/L',
-    description: 'Sodium level'
-  },
-  {
-    id: 'pot',
-    label: 'Potassium',
-    type: 'number',
-    min: 2,
-    max: 8,
-    step: 0.1,
-    unit: 'mEq/L',
-    description: 'Potassium level'
-  },
-  {
     id: 'hemo',
     label: 'Hemoglobin',
     type: 'number',
@@ -168,44 +49,6 @@ export const patientDataFields: PatientDataField[] = [
     step: 0.1,
     unit: 'g/dL',
     description: 'Hemoglobin level'
-  },
-  {
-    id: 'pcv',
-    label: 'Packed Cell Volume',
-    type: 'number',
-    min: 10,
-    max: 60,
-    unit: '%',
-    description: 'Packed cell volume'
-  },
-  {
-    id: 'wc',
-    label: 'White Blood Cell Count',
-    type: 'number',
-    min: 1000,
-    max: 30000,
-    unit: 'cells/mm³',
-    description: 'White blood cell count'
-  },
-  {
-    id: 'rc',
-    label: 'Red Blood Cell Count',
-    type: 'number',
-    min: 2,
-    max: 8,
-    step: 0.1,
-    unit: 'millions/mm³',
-    description: 'Red blood cell count'
-  },
-  {
-    id: 'htn',
-    label: 'Hypertension',
-    type: 'select',
-    options: [
-      { value: 'yes', label: 'Yes' },
-      { value: 'no', label: 'No' }
-    ],
-    description: 'Presence of hypertension'
   },
   {
     id: 'dm',
@@ -218,44 +61,14 @@ export const patientDataFields: PatientDataField[] = [
     description: 'Presence of diabetes mellitus'
   },
   {
-    id: 'cad',
-    label: 'Coronary Artery Disease',
+    id: 'htn',
+    label: 'Hypertension',
     type: 'select',
     options: [
       { value: 'yes', label: 'Yes' },
       { value: 'no', label: 'No' }
     ],
-    description: 'Presence of coronary artery disease'
-  },
-  {
-    id: 'appet',
-    label: 'Appetite',
-    type: 'select',
-    options: [
-      { value: 'good', label: 'Good' },
-      { value: 'poor', label: 'Poor' }
-    ],
-    description: 'Patient appetite'
-  },
-  {
-    id: 'pe',
-    label: 'Pedal Edema',
-    type: 'select',
-    options: [
-      { value: 'yes', label: 'Yes' },
-      { value: 'no', label: 'No' }
-    ],
-    description: 'Presence of pedal edema'
-  },
-  {
-    id: 'ane',
-    label: 'Anemia',
-    type: 'select',
-    options: [
-      { value: 'yes', label: 'Yes' },
-      { value: 'no', label: 'No' }
-    ],
-    description: 'Presence of anemia'
+    description: 'Presence of hypertension'
   }
 ];
 
