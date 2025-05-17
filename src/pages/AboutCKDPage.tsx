@@ -176,7 +176,7 @@ const AboutCKDPage = () => {
                       </tr>
                       <tr>
                         <td className="border px-4 py-2">Stage 5</td>
-                        <td className="border px-4 py-2">< 15</td>
+                        <td className="border px-4 py-2">&lt; 15</td>
                         <td className="border px-4 py-2">Kidney failure (may require dialysis or transplant)</td>
                       </tr>
                     </tbody>
