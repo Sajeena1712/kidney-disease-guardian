@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import PredictPage from "./pages/PredictPage";
 import ModelInfoPage from "./pages/ModelInfoPage";
 import AboutCKDPage from "./pages/AboutCKDPage";
+import ReviewPredictionsPage from "./pages/ReviewPredictionsPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/predict" element={<PredictPage />} />
           <Route path="/model" element={<ModelInfoPage />} />
           <Route path="/about" element={<AboutCKDPage />} />
+          <Route path="/review" element={<ReviewPredictionsPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

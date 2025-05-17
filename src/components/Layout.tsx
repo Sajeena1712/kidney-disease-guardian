@@ -3,7 +3,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Activity, AlertCircle, Home, FlaskConical } from "lucide-react";
+import { Activity, AlertCircle, Home, FlaskConical, History } from "lucide-react";
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const location = useLocation();
@@ -19,6 +19,11 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       path: "/predict",
       label: "Predict",
       icon: <Activity className="h-5 w-5" />
+    },
+    {
+      path: "/review",
+      label: "Review",
+      icon: <History className="h-5 w-5" />
     },
     {
       path: "/model",
@@ -51,7 +56,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <div className="flex flex-1 items-center justify-end space-x-4">
             <nav className="flex items-center space-x-2">
               <Tabs value={getCurrentValue()} className="w-full">
-                <TabsList className="grid grid-cols-4 w-fit">
+                <TabsList className="grid grid-cols-5 w-fit">
                   {navItems.map((item) => (
                     <TabsTrigger
                       asChild

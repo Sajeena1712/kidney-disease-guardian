@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Activity } from "lucide-react";
+import { Activity, History } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const HeroSection: React.FC = () => {
@@ -13,7 +13,7 @@ const HeroSection: React.FC = () => {
             Machine Learning Healthcare
           </div>
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            Chronic Kidney Disease Prediction
+            Review of Chronic Kidney Disease Prediction
           </h1>
           <p className="text-muted-foreground md:text-lg">
             Early detection can significantly improve treatment outcomes. Our advanced
@@ -29,6 +29,12 @@ const HeroSection: React.FC = () => {
             </Button>
             <Button asChild variant="outline">
               <Link to="/model">Learn More</Link>
+            </Button>
+            <Button asChild variant="secondary">
+              <Link to="/review">
+                <History className="mr-2 h-4 w-4" />
+                Review Predictions
+              </Link>
             </Button>
           </div>
         </div>
